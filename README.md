@@ -27,6 +27,21 @@ The deployed system captures frames using Raspberry Pi Camera, detects vehicle l
 
 The complete pipeline is optimized for **Raspberry Pi 4 (64-bit)** and edge AI deployment.
 
+<table>
+<tr>
+<td align="center">
+<img src="assets/raspberry_pi_4.jfif" width="450">
+</td>
+
+<td align="center">
+<img src="assets/multiple_car_detection.png" width="450">
+</td>
+</tr>
+</table>
+
+<p align="center">
+Live deployment on Raspberry Pi 4
+</p>
 ---
 
 # Features
