@@ -184,11 +184,11 @@ LicensePlateDetection/
 <tr>
 
 <td align="center">
-<img src="assets/raspberry_pi_4.jfif" width="450">
+        <img src="assets/raspberry_pi_4.jfif" width="450">
 </td>
 
 <td align="center">
-<img src="assets/raspberry_pi_4.jpg" width="450">
+        <img src="assets/raspberry_pi_4.jpg" width="450">       
 </td>
 
 </tr>
@@ -202,9 +202,21 @@ Live execution of the License Plate Recognition system on Raspberry Pi
 
 ## Real-Time License Plate Detection and OCR
 
-<p align="center">
-  <img src="assets/multiple_car_detection.png" width="800">
-</p>
+<table>
+<tr>
+
+<td align="center">
+        <img src="assets/multiple_car_detection.png" width="450">
+        <p align=center>Output Processed in Linux/Windows Computer</p>
+</td>
+
+<td align="center">
+        <img src="assets/raspberry_pi_detection.jpg" width="450">
+        <p align=center>Raspberry Pi 4 Output</p>
+</td>
+
+</tr>
+</table>
 
 <p align="center">
 Detected license plate with confidence score and extracted OCR text
