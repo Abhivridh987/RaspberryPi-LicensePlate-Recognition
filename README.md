@@ -30,7 +30,7 @@ The complete pipeline is optimized for **Raspberry Pi 4 (64-bit)** and edge AI d
 <table>
 <tr>
 <td align="center">
-<img src="assets/raspberry_pi_4.jpg" width="450" height="600">
+<img src="assets/raspberry_pi_4.jpg" width="450" height="500">
 </td>
 
 <td align="center">
