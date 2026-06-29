@@ -57,6 +57,48 @@ The complete pipeline is optimized for **Raspberry Pi 4 (64-bit)** and edge AI d
 
 ---
 
+# Folder Structure
+
+```text
+RaspberryPi-LicensePlate-Recognition/
+│
+├── assets/
+│   ├── model_training_results.png
+│   ├── multiple_car_detection.png
+│   ├── raspberry_pi_4.jfif
+│   ├── raspberry_pi_4.jpg
+│   └── raspberry_pi_detection.jpg
+│
+├── model_training/
+│    ├── models/
+│           ├── best_float32.tflite
+│           └── best.pt
+│    ├── License_Plate_Recognition.ipynb
+│    ├── License_Plate_Recognition.py
+│    ├── License_Plate_TFLite_Conversion.ipynb
+│    └── License_Plate_TFLite_Conversion.
+│
+├── models/
+│   └── best_float32.tflite
+│
+├── outputs/
+│   ├── frames/
+│   ├── video_reader.py
+│   ├── video_merger.py
+│   ├── original.mp4
+│   ├── output.mp4
+│   └── README.md
+│
+├── src/
+│   └── main.py
+│
+├── requirements.txt
+├── description.md
+└── README.md
+```
+
+---
+
 # System Architecture
 
 ```text
@@ -231,32 +273,6 @@ Display:
 * Bounding Box
 * Confidence Score
 * OCR Output
-
----
-
-# Folder Structure
-
-```text
-RaspberryPi-LicensePlate-Recognition/
-│
-├── models/
-│   └── best_float32.tflite
-│
-├── src/
-│   └── main.py
-│
-├── outputs/
-│   ├── video_reader.py
-│   ├── video_merger.py
-│   ├── original.mp4
-│   └── frames/
-│
-├── assets/
-│
-├── requirements.txt
-├── description.md
-└── README.md
-```
 
 ---
 
