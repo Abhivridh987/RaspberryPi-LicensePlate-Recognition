@@ -176,21 +176,26 @@ LicensePlateDetection/
 
 ---
 
-## Project Outputs
+# Project Outputs
 
-### Raspberry Pi Deployment Setup
+## Raspberry Pi Deployment Setup
 
+<div style="display:flex;">
 <p align="center">
   <img src="assets/raspberry_pi_4.jfif" width="800">
 </p>
-
+<p align="center">
+  <img src="assets/raspberry_pi_4.jpg" width="800">
+</p>
+</div>
 <p align="center">
 Live execution of the License Plate Recognition system on Raspberry Pi
 </p>
 
+
 ---
 
-### Real-Time License Plate Detection and OCR
+## Real-Time License Plate Detection and OCR
 
 <p align="center">
   <img src="assets/multiple_car_detection.png" width="800">
