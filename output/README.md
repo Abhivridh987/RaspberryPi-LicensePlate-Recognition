@@ -18,12 +18,12 @@ The pipeline processes an input video frame-by-frame, performs:
 <tr>
 
 <td align="center">
-        <img src="assets/multiple_car_detection.png" width="450">
+        <img src="../assets/multiple_car_detection.png" width="450">
         <p align=center>Output Processed in Linux/Windows Computer</p>
 </td>
 
 <td align="center">
-        <img src="assets/raspberry_pi_detection.jpg" width="450">
+        <img src="../assets/raspberry_pi_detection.jpg" width="450">
         <p align=center>Raspberry Pi 4 Output</p>
 </td>
 
