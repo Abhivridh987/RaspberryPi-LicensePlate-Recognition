@@ -1,0 +1,14 @@
+# Python Version
+Python==3.13
+
+numpy==2.3.5
+
+opencv-python==4.10.0.84
+
+tensorflow==2.20.0
+
+paddlepaddle==3.2.0
+
+paddleocr==3.2.0
+
+picamera2==0.3.36
