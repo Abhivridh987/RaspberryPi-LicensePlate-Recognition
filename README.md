@@ -1,11 +1,12 @@
 # Real-Time License Plate Detection and OCR using TensorFlow Lite, PaddleOCR, and Raspberry Pi
 
-[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/lite)
-[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge\&logo=python\&logoColor=white)](https://www.python.org/)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-111111?style=for-the-badge)]
+[![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-FF6F00?style=for-the-badge\&logo=tensorflow\&logoColor=white)](https://www.tensorflow.org/lite)
+[![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge\&logo=opencv\&logoColor=white)](https://opencv.org/)
 [![PaddleOCR](https://img.shields.io/badge/PaddleOCR-0052CC?style=for-the-badge)](https://github.com/PaddlePaddle/PaddleOCR)
-[![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
-[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
+[![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge\&logo=numpy\&logoColor=white)](https://numpy.org/)
+[![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge\&logo=raspberrypi\&logoColor=white)](https://www.raspberrypi.com/)
 
 ---
 
@@ -13,32 +14,46 @@
 
 A real-time License Plate Detection and Recognition system built using:
 
-- TensorFlow Lite
-- PaddleOCR
-- OpenCV
-- Raspberry Pi Camera
-- Computer Vision
+* YOLOv8
+* TensorFlow Lite
+* PaddleOCR
+* OpenCV
+* Raspberry Pi Camera
+* Computer Vision
 
-The system captures live video from a Raspberry Pi camera, detects vehicle license plates using a TensorFlow Lite object detection model, performs perspective correction, and extracts plate text using PaddleOCR.
+This project trains a **custom YOLOv8 model on Indian License Plate datasets** and converts the trained model into **TensorFlow Lite (.tflite)** format for lightweight CPU inference.
 
-The project is optimized to run completely on CPU and is designed for edge deployment on Raspberry Pi 4 (64-bit).
+The deployed system captures frames using Raspberry Pi Camera, detects vehicle license plates, performs perspective correction, and extracts text using PaddleOCR.
+
+The complete pipeline is optimized for **Raspberry Pi 4 (64-bit)** and edge AI deployment.
 
 ---
 
 # Features
 
-✔ Real-time License Plate Detection  
-✔ TensorFlow Lite Inference  
-✔ PaddleOCR Text Recognition  
-✔ Perspective Transformation  
-✔ License Plate Rectification  
-✔ OCR Text Extraction  
-✔ Confidence Filtering  
-✔ Non-Maximum Suppression (NMS)  
-✔ Raspberry Pi Camera Integration  
-✔ Live Visualization  
-✔ CPU Optimized Execution  
-✔ Thread Limiting for Stability  
+✔ Custom YOLOv8 Training on Indian License Plate Dataset
+
+✔ TensorFlow Lite Conversion
+
+✔ Real-Time License Plate Detection
+
+✔ PaddleOCR Text Recognition
+
+✔ Perspective Transformation
+
+✔ License Plate Rectification
+
+✔ OCR Text Extraction
+
+✔ Confidence Filtering
+
+✔ Non-Maximum Suppression (NMS)
+
+✔ Raspberry Pi Camera Integration
+
+✔ CPU Optimized Execution
+
+✔ Lightweight Edge Deployment
 
 ---
 
@@ -51,7 +66,9 @@ Frame Capture
         ↓
 Preprocessing
         ↓
-TensorFlow Lite Detection
+YOLOv8 Detection
+        ↓
+TensorFlow Lite Inference
         ↓
 Bounding Box Extraction
         ↓
@@ -70,96 +87,157 @@ Visualization
 
 # Technologies Used
 
-- Python
-- TensorFlow Lite
-- PaddleOCR
-- PaddlePaddle
-- OpenCV
-- NumPy
-- Raspberry Pi Camera (Picamera2)
+* Python
+* YOLOv8
+* TensorFlow Lite
+* PaddleOCR
+* PaddlePaddle
+* OpenCV
+* NumPy
+* Raspberry Pi Camera (Picamera2)
+* Edge AI
 
 ---
 
 # Project Workflow
 
-## Phase 1 — Live Camera Acquisition
+## Phase 1 — Dataset Preparation
 
-Capture frames continuously using Raspberry Pi Camera.
+Prepare Indian License Plate dataset.
+
+Process:
+
+* Annotation
+* Label Formatting
+* Dataset Split
 
 Output:
 
-- RGB Frame
+* Training Dataset
+* Validation Dataset
 
 ---
 
-## Phase 2 — Object Detection
+## Phase 2 — YOLOv8 Model Training
 
-Run TensorFlow Lite model.
+Train custom YOLOv8 model.
 
 Outputs:
 
-- Center X
-- Center Y
-- Width
-- Height
-- Confidence
-
----
-
-## Phase 3 — Post Processing
-
-Apply:
-
-- Confidence Threshold
-- Bounding Box Conversion
-- NMS
-
-Result:
-
-Final License Plate Regions
-
----
-
-## Phase 4 — Perspective Correction
-
-Apply:
-
-- Contour Extraction
-- Rectangle Detection
-- Perspective Transform
+* License Plate Detection
+* Bounding Box Regression
+* Confidence Estimation
 
 Output:
 
-Straightened License Plate
+```text
+best.pt
+```
 
 ---
 
-## Phase 5 — OCR
+## Phase 3 — TensorFlow Lite Conversion
+
+Convert trained YOLOv8 model into TensorFlow Lite.
+
+Purpose:
+
+* Faster Inference
+* CPU Optimization
+* Raspberry Pi Deployment
+
+Output:
+
+```text
+best_float32.tflite
+```
+
+---
+
+## Phase 4 — Live Camera Acquisition
+
+Capture frames using Raspberry Pi Camera.
+
+Output:
+
+```text
+RGB Frames
+```
+
+---
+
+## Phase 5 — Detection
+
+Run TensorFlow Lite inference.
+
+Outputs:
+
+* Center X
+* Center Y
+* Width
+* Height
+* Confidence
+
+---
+
+## Phase 6 — Post Processing
+
+Apply:
+
+* Confidence Threshold
+* Bounding Box Conversion
+* NMS
+
+Result:
+
+```text
+Final Plate Regions
+```
+
+---
+
+## Phase 7 — Perspective Correction
+
+Apply:
+
+* Contour Detection
+* Rectangle Extraction
+* Perspective Transform
+
+Output:
+
+```text
+Straightened Plate
+```
+
+---
+
+## Phase 8 — OCR
 
 Run PaddleOCR.
 
 Extract:
 
-- Characters
-- Numbers
-- Complete Plate Text
+* Characters
+* Numbers
+* Full License Plate Text
 
 ---
 
-## Phase 6 — Visualization
+## Phase 9 — Visualization
 
 Display:
 
-- Bounding Box
-- Confidence
-- Extracted Text
+* Bounding Box
+* Confidence Score
+* OCR Output
 
 ---
 
 # Folder Structure
 
 ```text
-LicensePlateDetection/
+RaspberryPi-LicensePlate-Recognition/
 │
 ├── models/
 │   └── best_float32.tflite
@@ -167,11 +245,17 @@ LicensePlateDetection/
 ├── src/
 │   └── main.py
 │
+├── outputs/
+│   ├── video_reader.py
+│   ├── video_merger.py
+│   ├── original.mp4
+│   └── frames/
+│
+├── assets/
+│
 ├── requirements.txt
 ├── description.md
-├── README.md
-│
-└── outputs/
+└── README.md
 ```
 
 ---
@@ -182,65 +266,75 @@ LicensePlateDetection/
 
 <table>
 <tr>
-
 <td align="center">
-        <img src="assets/raspberry_pi_4.jfif" width="450">
+<img src="assets/raspberry_pi_4.jfif" width="450">
 </td>
 
 <td align="center">
-        <img src="assets/raspberry_pi_4.jpg" width="450">       
+<img src="assets/raspberry_pi_4.jpg" width="450">
 </td>
-
 </tr>
 </table>
 
 <p align="center">
-Live execution of the License Plate Recognition system on Raspberry Pi
+Live deployment on Raspberry Pi 4
 </p>
 
 ---
 
-## Real-Time License Plate Detection and OCR
+## Real-Time License Plate Detection
 
 <table>
 <tr>
 
 <td align="center">
-        <img src="assets/multiple_car_detection.png" width="450">
-        <p align=center>Output Processed in Linux/Windows Computer</p>
+<img src="assets/multiple_car_detection.png" width="450">
+<p>Linux / Windows Output</p>
 </td>
 
 <td align="center">
-        <img src="assets/raspberry_pi_detection.jpg" width="450">
-        <p align=center>Raspberry Pi 4 Output</p>
+<img src="assets/raspberry_pi_detection.jpg" width="450">
+<p>Raspberry Pi Output</p>
 </td>
 
 </tr>
 </table>
 
 <p align="center">
-Detected license plate with confidence score and extracted OCR text
+Detected plates with confidence score and OCR text
 </p>
 
 ---
-
 
 # Installation
 
 Clone repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/license-plate-detection-raspberrypi.git
+git clone https://github.com/YOUR_USERNAME/RaspberryPi-LicensePlate-Recognition.git
 ```
 
 Create environment
 
 ```bash
 python -m venv cv_env
+```
+
+Activate
+
+Linux:
+
+```bash
 source cv_env/bin/activate
 ```
 
-Install dependencies
+Windows:
+
+```bash
+cv_env\Scripts\activate
+```
+
+Install
 
 ```bash
 pip install -r requirements.txt
@@ -257,42 +351,42 @@ python main.py
 # Controls
 
 | Key | Action |
-|------|--------|
-| Q | Quit |
+| --- | ------ |
+| Q   | Quit   |
 
 ---
 
 # Concepts Used
 
-- TensorFlow Lite
-- OCR
-- Perspective Transform
-- Object Detection
-- Non Maximum Suppression
-- Computer Vision
-- Edge AI
-- Real-Time Processing
-
----
-
-# Future Improvements
-
-- Multi-Line Plate Recognition
-- Vehicle Tracking
-- Database Integration
-- Automatic Gate Control
-- Edge TPU Acceleration
-- Web Dashboard
+* YOLOv8 Object Detection
+* Transfer Learning
+* TensorFlow Lite Optimization
+* OCR
+* Perspective Transform
+* Non Maximum Suppression
+* Computer Vision
+* Edge AI
 
 ---
 
 # Applications
 
-- Smart Parking
-- Vehicle Monitoring
-- Toll Automation
-- Security Systems
-- Automated Entry Systems
+* Smart Parking
+* Vehicle Monitoring
+* Toll Automation
+* Vehicle Entry Systems
+* Security Systems
+
+---
+
+# Future Improvements
+
+* Multi-Line OCR
+* Vehicle Tracking
+* Database Integration
+* Web Dashboard
+* Coral Edge TPU
+* Automatic Gate Systems
 
 ---
 
