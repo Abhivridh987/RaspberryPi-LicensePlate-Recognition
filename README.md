@@ -32,16 +32,27 @@ The complete pipeline is optimized for **Raspberry Pi 4 (64-bit)** and edge AI d
 # Features
 
 ✔ Custom YOLOv8 Training on Indian License Plate Dataset
+
 ✔ TensorFlow Lite Conversion
+
 ✔ Real-Time License Plate Detection
+
 ✔ PaddleOCR Text Recognition
+
 ✔ Perspective Transformation
+
 ✔ License Plate Rectification
+
 ✔ OCR Text Extraction
+
 ✔ Confidence Filtering
+
 ✔ Non-Maximum Suppression (NMS)
+
 ✔ Raspberry Pi Camera Integration
+
 ✔ CPU Optimized Execution
+
 ✔ Lightweight Edge Deployment
 
 ---
