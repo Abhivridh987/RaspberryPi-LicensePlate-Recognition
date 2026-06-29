@@ -53,7 +53,7 @@ Deployment
 
 <td align="center">
 
-<img src="assets/results.png" width="900">
+<img src="../assets/model_training_results.png" width="900">
 
 </td>
 
